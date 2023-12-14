@@ -24,7 +24,7 @@ jobs:
         shell: bash
         run: |
           sudo apt update
-          sudo apt install intel-oneapi-compiler
+          sudo apt install intel-oneapi-compiler-dpcpp-cpp
           # if `which icx` is zero string (test is nonzero), return code 1
           test -n `which icx`
 
