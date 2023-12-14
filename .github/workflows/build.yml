@@ -1,0 +1,25 @@
+name:  build
+
+on:
+  push:
+    # we do this when we push to main and dev
+    branches: [ "main" ]
+
+jobs:
+  build_gcc:
+    runs-on: ["ubuntu-latest"]
+ 
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: make gcc
+        run: |
+          pwd
+          echo "start building"
+          cd src
+          export CC=gcc
+          make
+          echo "done building"
+
+
