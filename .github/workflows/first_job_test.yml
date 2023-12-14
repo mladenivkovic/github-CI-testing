@@ -1,0 +1,53 @@
+name:  first_job_test
+
+# here we define a series of jobs that can be run either
+# sequentially or in parallel.
+
+
+# define when we run this workflow. Take note of the indentation.
+
+on:
+  push:
+    # we do this when we push to main and dev
+    branches: [ "main", "dev" ]
+
+jobs:
+  hello_world:
+    # specify where we want this job to run.
+    # "self_hosted" implies any self_hosted runner
+    # "ubuntu_latest" implies any runner on GitHub
+    # that uses "ubuntu-latest" docker image
+    runs_on: ["ubuntu-latest"]
+    
+
+    # these are the steps that this job runs.
+    # There each run sequentially.
+    # Note: Every instruction within a step starts with "name" and a hyphen
+    steps:
+      # this ensures we checkout the repo first.
+      # These actions will be used by all steps.
+      # If you want to put more than one here,
+      # put them in a list.
+      # 'uses' basically selects a pre-defined set of 'run' scripts
+      # provided by github. "actions/checkout@v3" checks out the repository.
+      - uses: actions/checkout@v3
+
+      - name: Say Hello
+        # List all bash commands to run. First line containts the pipe '|'
+        # so we can use line breaks.
+        run: |
+          echo "Hello World!"
+
+      - name: Say Something Nice
+        run: |
+          echo "Lovely weather we're having."
+
+  # talk_to_me_more:
+  #   runs_on: ["ubuntu_latest"]
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Talk to me more
+
+
+
+
