@@ -42,12 +42,18 @@ jobs:
         run: |
           echo "Lovely weather we're having."
 
-  # talk_to_me_more:
-  #   runs_on: ["ubuntu_latest"]
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - name: Talk to me more
+  talk_to_me_more:
+    runs-on: ["ubuntu-latest"]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
 
+      - name: Talk to me more
+        run: |
+          echo "Hic forum est. Populus properat."
 
+      - name: Talk to me less
+        run: |
+          echo ":("
 
 
