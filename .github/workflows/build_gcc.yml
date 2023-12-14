@@ -2,7 +2,6 @@ name:  gcc build and test pipeline
 
 on:
   push:
-    # we do this when we push to main and dev
     branches: [ "main" ]
 
 jobs:
