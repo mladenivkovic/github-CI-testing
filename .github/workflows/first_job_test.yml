@@ -17,7 +17,7 @@ jobs:
     # "self_hosted" implies any self_hosted runner
     # "ubuntu_latest" implies any runner on GitHub
     # that uses "ubuntu-latest" docker image
-    runs_on: ["ubuntu-latest"]
+    runs-on: ["ubuntu-latest"]
     
 
     # these are the steps that this job runs.
